@@ -1,0 +1,589 @@
+:root{
+    font-family: 'Courier New', Courier, monospace;
+    --fonts: 'Courier New', Courier, monospace;
+    --main-color: #32363a;
+    --main-trans: #21232640;
+    --text-color: #ffffff;
+
+    /* nav bar stuff */
+    --nav-hover: #21232640;
+    --highlight-color: #04AA5C;
+    /* can change nav-here-hover */
+    --highlight-color-hover: #04AA5C;
+
+}
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body{
+    background-color: var(--main-color);
+    text-align: center;
+    color: var(--text-color);
+
+}
+
+.shown{
+    display: block;
+}
+
+.hidden{
+    display: none;
+}
+
+@media only screen and (min-width: 900px) {
+    .pad { 
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+  }
+/* hide scroll bar  */
+.hide-bar::-webkit-scrollbar {
+    display: none;
+  }
+
+
+/* navbar stuff */
+ul.navbar {
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--main-color);
+    border-radius: 10px;
+    margin-top: 10px;
+    z-index: 100;
+}
+
+.stick {
+    position: sticky;
+    top: 0;
+}
+    
+.navbar-Logo{
+    float: right;
+}
+
+
+li {
+    float: left;
+}
+
+/* Navbar buttons */
+.nav-button{
+    font-family: 'Courier New', Courier, monospace;
+
+    border: none;
+    background-color: var(--main-color);
+    font-size: large;
+    /* font-weight: bold; */
+    border-bottom: var(--main-color) solid 0.5px;
+    border-top: var(--main-color) solid 0.5px;
+  
+    color: var(--main-color);
+    display: block;
+    color: var(--text-color);
+    text-align: center;
+    border-radius: 10px;
+    padding: 14px 20px;
+    text-decoration: none;
+    margin-bottom: 10%;
+    margin-left: 10px;
+}
+  
+.nav-button:hover{
+cursor:pointer;
+background-color: var(--nav-hover);
+}
+
+.current-loc{
+color: black;
+background-color: var(--highlight-color);
+}
+
+.current-loc:hover{
+    /* color: var(--highlight-color); */
+    background-color: var(--highlight-color);
+}
+
+
+
+/* 
+        HERO FLEX BOXING
+*/
+
+.leftTop{    
+    float: left;
+    width: 49%;
+    height:130px;
+    margin-left: 1px;
+}
+.rightTop{
+    float: right;
+    width: 49%;
+    height:130px;
+}
+
+#hero{
+    padding-top: 10px;
+    color: #04AA5C;
+    background-color: var(--main-trans);
+    border-radius: 10px;
+}
+
+.hero{
+    padding-top: 10px;
+    color: #04AA5C;
+    background-color: var(--main-trans);
+    border-radius: 10px;
+}
+
+.hero-box{
+    padding-top: 80px;
+    padding-bottom: 350px;
+}
+
+
+.third-row-hero{
+    margin-top: 15px;
+}
+
+/*    FOR MOBILE PHONES TO DISPLAY FLEX BOXES VERTICLY       */
+@media only screen and (max-width: 700px) {
+    .leftTop{    
+        margin-bottom: 10px;
+        width: 100%;
+        height:130px;  
+    }
+    .rightTop{
+        margin-bottom: 30px;
+        width: 100%;
+        height: 130px;
+    }
+    .third-row-hero-left{
+        float: left;
+        width: 49%;
+        height:130px;
+        margin-left: 1px;
+    }
+
+    .third-row-hero-right{
+        float: right;
+        width: 49%;
+        height:130px;
+        margin-left: 1px;
+    }
+    .third-row-hero{
+        transform: translateY(-35px);
+        z-index: 100;
+    }
+    .second-layer-band{
+        transform: translateY(130px);
+    }
+    #about-me-start{
+        transform: translateY(-300px);
+    }
+}
+
+
+
+/* 
+    COOL JSCRIPT NODE DISPLAY
+*/
+
+#canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+#node-settings {
+    position: relative;
+    transform: translateY(-30px);
+    width: 100%;
+    height: 30px;
+}
+
+#node-settings-svg{
+    cursor: pointer;
+    padding-right: 5px;
+    position: absolute;
+    right: 0;
+    width: 30px;
+    height: 30px;
+}
+
+
+/* 
+    FANCY SWITCH FOR COLOUR
+*/
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    z-index: 100;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    z-index: 100;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--highlight-color);
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+
+
+/* 
+    * Weather
+*/
+#conditions-div{
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#weather-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#weather-span{
+    display: flex;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    align-items: center;
+    justify-content: space-evenly;
+    transform: translateY(-10px);
+    /* background-color: blue; */
+}
+
+#condition-data{
+    transform: translateY(-25px);
+}
+
+#location-div{
+    display: flex;
+}
+
+
+@media screen and (max-width: 1160px) {
+    #weather-location{
+        display: block;
+    }
+    #weather-icon{
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 900px) {
+    #weather-location{
+        display: none;
+    }
+    #weather-icon{
+        display: block;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #weather-location{
+        display: none;
+    }
+    #weather-icon{
+        display: none;
+    }
+}
+
+
+/* 
+    * Project Cards
+*/
+.project-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .project-card {
+    flex: 0 1 24%;
+    margin: 16px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+/* .project-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    vertical-align: top;
+} */
+
+/* 
+    ABOUT ME STUFF
+*/
+
+#about-me-start{
+    transform: translateY(-300px);
+}
+/* ==============
+    ABOUT ME FOR LARGER SCREEN SIZES
+    from 700px onwards
+================*/
+
+.spacer{
+    aspect-ratio: 900/300;
+    width: 110%;
+    transform: translateX(-5%);
+    overflow: hidden;
+    background-repeat: repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+}
+
+
+.waves1 {
+    background-image: url(/img/waves1.svg);
+    transform: translateY(-120px);
+}
+.waves2 {
+    background-image: url(/img/waves2.svg);
+}
+
+.under-wave{
+    transform: translateY(-120px);
+}
+.about-me{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-me-circle{
+    margin: 10px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: blue;
+    z-index: 0;
+}
+
+.inner-circle{
+    padding-top: 10px;
+    /* background-color: black; */
+}
+
+.about-me-cards{
+    background-color: blue;
+}
+
+
+
+#about-me-education{
+    transform: translatex(-250px);    
+}
+#about-me-goals{
+    transform: translatex(200px);
+}
+
+#about-me-hobbies{
+    transform: translatex(-250px);
+}
+
+
+
+@media (max-width: 700px) {
+    /* ================
+        ABOUT ME FOR PHONES up to 700px
+    ===================*/
+    .about-me{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .about-me-circle{
+        margin: 10px;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background-color: blue;
+    }
+
+    .inner-circle{
+        padding-top: 10px;
+        /* background-color: black; */
+    }
+
+    #about-me-education{
+        transform: translatex(0px);
+    }
+
+    #about-me-goals{
+        transform: translatex(0px);
+    }
+    #about-me-hobbies{
+    transform: translatex(0px);
+    }
+
+}
+
+/* 
+kinda a good size for the smaller circles
+border-radius: 50%;
+position: relative;
+margin: 0px 0px 0px 100px;
+
+width: 150px;
+height: 150px;
+background-color: black; 
+
+*/
+
+/* 
+        TECH STACK STUFF
+*/
+
+.tech-stack-stack{
+    height: 800px;
+    float:none;
+}
+
+#tech-logo{
+    width: 60px;
+}
+
+
+
+/* animate on scroll  */
+.hidden-stack-item{
+    opacity: 0;
+    filter: blur(5px);
+    transform: translate(-100%);
+    transition: all 1s;
+}
+
+.shown-stack-item{
+    opacity: 1;
+    filter: blur(0);
+    transform: translate(0);
+}
+
+
+
+@media(prefers-reduced-motion){
+    .hidden-stack-item{
+        transition: none;
+    }
+}
+
+
+/* footer */
+#footer{
+    height: 100px;
+}
+
+
+.flask{
+    border: inset solid 1px black;
+    border-radius: 25%;
+    padding: 8px;
+    background-color: white;
+}
+
+
+
+
+
+/* below is loader... */
+
+
+#loader {
+    border: 12px solid var(--highlight-color);
+    border-radius: 50%;
+    border-top: 12px solid #444444;
+    width: 70px;
+    height: 70px;
+    animation: spin 5s linear infinite;
+}
+  
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+  
+.center {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}

@@ -7,13 +7,11 @@ function get_weather(city){
     fetch(`https://api.weatherapi.com/v1/current.json?key=${WEATHER}&q=${city}`)
     .then(res => res.json())
     .then(data => {
-        console.log(data)
+        // console.log(data)
         var temp = data.current.temp_c + "°C"
         var location = data.location.name
         var condition = data.current.condition.text
         var icon = data.current.condition.icon
-
-        console.log(icon)
 
         document.getElementById("weather-div").innerHTML = `
             <span id="weather-span">

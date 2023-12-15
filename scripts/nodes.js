@@ -1,42 +1,75 @@
-settings = {
-    particle_count: 50,
-    colors: ["#04AA5C","white","lightblue"],
-    acc: 1,
-    dec: 1,
-    particle_size: 3,
-    line_width: 1,
-    connectivity_distance: 200
+// settings = {
+//     particle_count: 50,
+//     colors: ["#04AA5C","white","lightblue"],
+//     acc: 1,
+//     dec: 1,
+//     particle_size: 3,
+//     line_width: 1,
+//     connectivity_distance: 200
+// }
+
+
+function set_particle_count(count) {
+    particle_count = count;
+    document.cookie = `particle_count=${count}; path=/`
+    return true
 }
 
-
-
-
-function change_particle_count(count) {
-  particle_count = count;
+function get_particle_count() {
+    return particle_count;
 }
 
-function change_color(color) {
+function set_colors(color) {
     colors = color;
+    return true
 }
 
-function change_acc(acc) {
+function get_colors() {
+    return colors;
+}
+
+function set_acc(acc) {
     acc = acc;
+    return true
 }
 
-function change_dec(dec) {
+function get_acc() {
+    return acc;
+}
+
+function set_dec(dec) {
     dec = dec;
+    return true
 }
 
-function change_particle_size(size) {
-    particle_size = size;
+function get_dec() {
+    return dec;
 }
 
-function change_line_width(width) {
+function set_particle_size(size) {
+    this.particle_size = size;
+    return true
+}
+
+function get_particle_size() {
+    return particle_size;
+}
+
+function set_line_width(width) {
     lineWidth = width;
+    return true
+}
+function get_line_width() {
+    return lineWidth;
 }
 
-function change_connectivity_distance(distance) {
+function set_connectivity_distance(distance) {
     connectivity_distance = distance;
+    return true
+}
+
+function get_connectivity_distance() {
+    return connectivity_distance;
 }
 
 
@@ -75,25 +108,41 @@ function fix_dpi() {
     canvas.setAttribute('width', style_width * dpi);
 }
 
+function get_cookie(value){
+    var cookies = document.cookie.split(';');
+    for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i].trim();
+        if (cookie.startsWith(`${value}=`)) {
+            var cookie_value = cookie.substring(`${value}=`.length, cookie.length);
+            console.log(`cookie-${value} = ` + cookie_value);
+            return cookie_value
+        }
+    }
+}
 
-var particle_count = 50
+get_cookie("particle_count")
+
+var particle_count = 40
+
+
+
 colors = ["#04AA5C","white","lightblue"];
 
 var acc = 1;
 var dec = 1;
 
-var particle_size = 5;
+var particle_size = 3;
 
 var lineWidth = 1
-var connectivity_distance = 200
+var connectivity_distance = 100
 
 particles = []
 
-console.log(settings.particle_count)
 
 function spawnSpeed(){
     return Math.round((Math.random()*201)+0)/100;
 }
+
 function Particle()
     {
         

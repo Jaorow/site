@@ -79,11 +79,46 @@
 
 
             <div class = "rightTop third-row-hero-right third-row-hero hero" id="site-visits">
-                    <h2><span id="visits">94</span> </h2>
-                    <h2>Site Visits.</h2>
+                <h2><span id="visits">94</span> </h2>
+                <h2>Site Visits.</h2>
             </div>
             <div class = "rightTop third-row-hero-right third-row-hero hidden hero" id="node-settings-div">
-                <h1>Settings</h1>
+                <span id="node-settings-header">
+                    <p id="node-settings-title">Node Settings:</p>
+                    <img src="img/close.svg" alt="close icon" onclick="open_node_settings()" id="node-settings-close" />
+                </span>
+                <span id="node-settings-body">
+                    <div id="node-settings-selector" class="custom-select">
+                            <select name="node-settings" id="node-settings-select" onchange="select_settings_change()">
+                                <option value="particle_count">particle count</option>
+                                <option value="acc">acceleration</option>
+                                <option value="dec">deceleration</option>
+                                <option value="particle_size">particle size</option>
+                                <option value="connectivity_distance">connectivity</option>
+                                <option value="line_width">line width</option>
+                                <option value="colors">colors</option>
+                            </select>
+                    </div>
+                    
+                    <div id="node-settings-container">
+                        
+                    
+                        <div id="particle_count-settings" class="node-settings">
+                            <h1 id="node-setting-value">50</h1>
+                        </div>
+
+                    </div>
+                </span>
+
+                <!-- settings = {
+                    particle_count: 50,
+                    colors: ["#04AA5C","white","lightblue"],
+                    acc: 1,
+                    dec: 1,
+                    particle_size: 3,
+                    line_width: 1,
+                    connectivity_distance: 200
+                } -->
         </div>
 
 
@@ -96,7 +131,9 @@
                 * 'HERO SECTION' END 
         -->
 
-    <div class = "spacer waves1" ></div>
+    <!-- TODO: fix these waves...  -->
+    <img class="wave-spacer" src="img/waves1.svg" alt="wave">
+    <div class = "spacer" ></div>
     <div class = "under-wave" >
         <div class="projects">
 

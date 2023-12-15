@@ -1,3 +1,7 @@
+var current_selected_setting = document.getElementById("node-settings-select").value
+
+
+
 function render_settings(x1,x2,x3){
     console.log("rendering settings")
     // MAX 20 MIN 4
@@ -50,5 +54,63 @@ function open_node_settings(){
     }
 }
 
+
+// settings = {
+//     particle_count: 50,
+//     colors: ["#04AA5C","white","lightblue"],
+//     acc: 1,
+//     dec: 1,
+//     particle_size: 3,
+//     line_width: 1,
+//     connectivity_distance: 200
+// }
+
+function select_settings_change(){
+    current_selected_setting = document.getElementById("node-settings-select").value
+    switch (current_selected_setting) {
+        case "particle_count":
+            get_particle_count();
+            console.log("particle_count = " + get_particle_count())
+            document.getElementById("node-setting-value").innerHTML = get_particle_count()
+            break;
+        case "colors":
+            get_colors();
+            console.log("colors = " + get_colors())
+            document.getElementById("node-setting-value").innerHTML = get_colors()
+            break;
+        case "acc":
+            get_acc();
+            console.log("acc = " + get_acc())
+            document.getElementById("node-setting-value").innerHTML = get_acc()
+            break;
+        case "dec":
+            get_dec();
+            console.log("dec = " + get_dec())
+            document.getElementById("node-setting-value").innerHTML = get_dec()
+            break;
+        case "particle_size":
+            get_particle_size();
+            console.log("particle_size = " + get_particle_size())
+            document.getElementById("node-setting-value").innerHTML = get_particle_size()
+            break;
+        case "line_width":
+            get_line_width();
+            console.log("line_width = " + get_line_width())
+            document.getElementById("node-setting-value").innerHTML = get_line_width()
+            break;
+        case "connectivity_distance":
+            get_connectivity_distance();
+            console.log("connectivity_distance = " + get_connectivity_distance())
+            document.getElementById("node-setting-value").innerHTML = get_connectivity_distance()
+            break;
+        
+        default:
+            break;
+    }
+}
+
 //! Some node settings will be rendered inside node.js... 
 render_settings(7,20,12)
+
+// TODO: remove this to start on site visits
+open_node_settings()

@@ -13,7 +13,6 @@
 
 }
 html, body {
-    max-width: 100%;
     overflow-x: hidden;
 }
 
@@ -21,6 +20,8 @@ body{
     background-color: var(--main-color);
     text-align: center;
     color: var(--text-color);
+    margin-left: 0px;
+    margin-right: 0px;
 
 }
 
@@ -46,7 +47,8 @@ body{
 
 /* navbar stuff */
 ul.navbar {
-
+    margin-left: 8px;
+    margin-right: 8px;
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -138,6 +140,8 @@ background-color: var(--highlight-color);
     color: #04AA5C;
     background-color: var(--main-trans);
     border-radius: 10px;
+	overflow-y: hidden;
+
 }
 
 .hero-box{
@@ -174,10 +178,11 @@ background-color: var(--highlight-color);
         width: 49%;
         height:130px;
         margin-left: 1px;
+		overflow-y: hidden;
     }
     .third-row-hero{
         transform: translateY(-35px);
-        z-index: 100;
+        z-index: 50;
     }
     .second-layer-band{
         transform: translateY(130px);
@@ -190,7 +195,7 @@ background-color: var(--highlight-color);
 
 
 /* 
-    COOL JSCRIPT NODE DISPLAY
+    *COOL JAVASCRIPT NODE DISPLAY
 */
 
 #canvas {
@@ -216,6 +221,94 @@ background-color: var(--highlight-color);
     height: 30px;
 }
 
+#node-settings-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+#node-settings-title{
+    font-size: large;
+    transform: translateY(-15px);
+	padding-left: 10px;
+}
+
+#node-settings-close{
+    cursor: pointer;
+    padding-right: 5px;
+    width: 30px;
+    height: 30px;
+	transition: transform 0.3s ease;
+    transform-origin: center; 
+}
+
+/* #node-settings-close:hover {
+    transform: rotate(180deg);
+} */
+
+
+
+#node-settings-body{
+	display: flex;
+	justify-content: space-between;
+}
+
+#node-settings-selector{
+    position: relative;
+    transform: translateY(-25px);
+    padding-left: 10px;
+    width: 150px;
+	text-align: start;
+	/* background-color: green; */
+	overflow-y: auto;
+}
+
+select {
+	appearance: none;
+	/*  safari  */
+	-webkit-appearance: none;
+	/*  other styles for aesthetics */
+	width: 100%;
+	font-size: 1.15rem;
+	padding: 5px;
+	background-color: var(--main-color);
+	border: 1px solid var(--highlight-color);
+	border-radius: 0.25rem;
+	color: var(--text-color);
+	cursor: pointer;
+}
+
+.custom-select::before,
+.custom-select::after {
+  --size: 0.3rem;
+  content: "";
+  position: absolute;
+  right: 1rem;
+  pointer-events: none;
+}
+
+.custom-select::before {
+  border-left: var(--size) solid transparent;
+  border-right: var(--size) solid transparent;
+  border-bottom: var(--size) solid black;
+  top: 15%;
+}
+
+.custom-select::after {
+  border-left: var(--size) solid transparent;
+  border-right: var(--size) solid transparent;
+  border-top: var(--size) solid black;
+  top: 25%;
+}
+
+
+#node-settings-container{
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.node-settings-item{
+    padding-bottom: 10px;
+}
 
 /* 
     FANCY SWITCH FOR COLOUR
@@ -408,10 +501,12 @@ background-color: var(--highlight-color);
 }
 
 
-.waves1 {
-    background-image: url(/img/waves1.svg);
-    transform: translateY(-120px);
+.wave-spacer{
+    width: 100%;
+    transform: translateY(110%);
 }
+
+
 .waves2 {
     background-image: url(/img/waves2.svg);
 }

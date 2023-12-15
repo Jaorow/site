@@ -9,34 +9,66 @@ settings = {
 }
 
 
-
-
-function change_particle_count(count) {
-  particle_count = count;
+function set_particle_count(count) {
+    particle_count = count;
+    return true
 }
 
-function change_color(color) {
+function get_particle_count() {
+    return particle_count;
+}
+
+function set_colors(color) {
     colors = color;
+    return true
 }
 
-function change_acc(acc) {
+function get_colors() {
+    return colors;
+}
+
+function set_acc(acc) {
     acc = acc;
+    return true
 }
 
-function change_dec(dec) {
+function get_acc() {
+    return acc;
+}
+
+function set_dec(dec) {
     dec = dec;
+    return true
 }
 
-function change_particle_size(size) {
+function get_dec() {
+    return dec;
+}
+
+function set_particle_size(size) {
     particle_size = size;
+    return true
 }
 
-function change_line_width(width) {
+function get_particle_size() {
+    return particle_size;
+}
+
+function set_line_width(width) {
     lineWidth = width;
+    return true
+}
+function get_line_width() {
+    return lineWidth;
 }
 
-function change_connectivity_distance(distance) {
+function set_connectivity_distance(distance) {
     connectivity_distance = distance;
+    return true
+}
+
+function get_connectivity_distance() {
+    return connectivity_distance;
 }
 
 
@@ -82,7 +114,7 @@ colors = ["#04AA5C","white","lightblue"];
 var acc = 1;
 var dec = 1;
 
-var particle_size = 5;
+var particle_size = 2;
 
 var lineWidth = 1
 var connectivity_distance = 200

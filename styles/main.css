@@ -268,7 +268,8 @@ select {
 	-webkit-appearance: none;
 	/*  other styles for aesthetics */
 	width: 100%;
-	font-size: 1.15rem;
+    font-family: 'Courier New', Courier, monospace;
+	font-size: 0.8rem;
 	padding: 5px;
 	background-color: var(--main-color);
 	border: 1px solid var(--highlight-color);
@@ -290,20 +291,52 @@ select {
   border-left: var(--size) solid transparent;
   border-right: var(--size) solid transparent;
   border-bottom: var(--size) solid black;
-  top: 15%;
+  top: 25%;
 }
 
 .custom-select::after {
   border-left: var(--size) solid transparent;
   border-right: var(--size) solid transparent;
   border-top: var(--size) solid black;
-  top: 25%;
+  top: 50%;
 }
 
 
 #node-settings-container{
-	margin-right: auto;
-	margin-left: auto;
+    position:static;
+    margin-left: auto;
+    margin-right: auto;
+    transform: translateY(-50px);
+    width:fit-content;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+@media screen and (max-width: 1400px){
+    #node-settings-container{
+        margin-left: 60%;
+    }
+}
+@media screen and (max-width: 625px){
+    #node-settings-container{
+        transform: translateY(-15px);
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #node-settings-selector{
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+#node-setting-value{
+    background:none;
+    border: none;
+    width: 70px;
+    height: 50px;
+    font-family: 'Courier New', Courier, monospace;
+    color: var(--highlight-color);
+    font-size:x-large;
+    font-weight: bolder;
 }
 
 .node-settings-item{

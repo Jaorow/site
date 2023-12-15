@@ -82,6 +82,7 @@
                 <h2><span id="visits">94</span> </h2>
                 <h2>Site Visits.</h2>
             </div>
+
             <div class = "rightTop third-row-hero-right third-row-hero hidden hero" id="node-settings-div">
                 <span id="node-settings-header">
                     <p id="node-settings-title">Node Settings:</p>
@@ -100,15 +101,10 @@
                             </select>
                     </div>
                     
-                    <div id="node-settings-container">
-                        
-                    
-                        <div id="particle_count-settings" class="node-settings">
-                            <h1 id="node-setting-value">50</h1>
-                        </div>
-
-                    </div>
                 </span>
+                    <div id="node-settings-container">
+                        <input type="number" id="node-setting-value" value="50" min="1" max="50" onchange="set_particle_count(this.value)"/>
+                    </div>
 
                 <!-- settings = {
                     particle_count: 50,

@@ -7,7 +7,7 @@ const locations = [
 
 //* function to load a page on window load.
 window.onload = function() {
-    console.log("onload functions running...")    
+    console.log("Site has started")    
 
     setLocation("home")
 };
@@ -39,10 +39,13 @@ function setLocation(location) {
 function loadElementsForLocation(location) {
     switch (location) {
         case "home":
-            console.log(location +" elements loaded")
+            // console.log(location +" elements loaded")
+            break
         case "about":
-            console.log(location +" elements loaded")
+            // console.log(location +" elements loaded")
+            break
         case "other":
-            console.log(location +" elements loaded")
+            // console.log(location +" elements loaded")
+            break
     }
 }

@@ -480,35 +480,8 @@ select {
 }
 
 
-/* 
-    * Project Cards
-*/
-.project-cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
 
-  .project-card {
-    flex: 0 1 24%;
-    margin: 16px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 16px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
 
-/* .project-card {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 16px;
-    margin: 16px;
-    width: 200px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: inline-block;
-    vertical-align: top;
-} */
 
 /* 
     ABOUT ME STUFF
@@ -523,20 +496,16 @@ select {
 ================*/
 
 .spacer{
-    aspect-ratio: 900/300;
-    width: 110%;
-    transform: translateX(-5%);
-    overflow: hidden;
-    background-repeat: repeat;
-    background-position: center;
-    background-size: cover;
+    padding-bottom: 150px;
+    width: 100%;
     z-index: -1;
 }
 
 
 .wave-spacer{
+    margin-top: 10%;
     width: 100%;
-    transform: translateY(110%);
+    /* transform: translateY(110%); */
 }
 
 

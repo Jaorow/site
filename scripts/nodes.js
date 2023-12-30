@@ -122,7 +122,7 @@ function get_cookie(value){
 
 get_cookie("particle_count")
 
-var particle_count = 40
+var particle_count = 50
 
 
 
@@ -134,7 +134,7 @@ var dec = 1;
 var particle_size = 3;
 
 var lineWidth = 1
-var connectivity_distance = 100
+var connectivity_distance = 200
 
 particles = []
 

@@ -17,18 +17,29 @@
 /* 
     * Project Cards
 */
-.project-cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
+#project-cards-container{
+  margin: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
 
-  .project-card {
-    flex: 0 1 24%;
-    margin: 16px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 16px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
+.project-card {
+  background-color: var(--main-trans);
+  max-width: 400px;
+  height: 600px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: #04AA5C 1px solid;
+  padding: 5px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 16px;
+}
+
+.card-img{
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}

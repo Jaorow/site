@@ -1,0 +1,45 @@
+:root{
+    font-family: 'Courier New', Courier, monospace;
+    --fonts: 'Courier New', Courier, monospace;
+    --main-color: #32363a;
+    --main-trans: #21232640;
+    --text-color: #ffffff;
+
+    /* nav bar stuff */
+    --nav-hover: #21232640;
+    --highlight-color: #04AA5C;
+    /* can change nav-here-hover */
+    --highlight-color-hover: #04AA5C;
+
+}
+
+
+/* 
+    * Project Cards
+*/
+#project-cards-container{
+  margin: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-card {
+  background-color: var(--main-trans);
+  max-width: 400px;
+  height: 600px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: #04AA5C 1px solid;
+  padding: 5px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 16px;
+}
+
+.card-img{
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}

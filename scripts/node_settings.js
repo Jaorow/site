@@ -128,4 +128,4 @@ function select_settings_change(){
 render_settings(7,20,12)
 
 // TODO: remove this to start on site visits
-open_node_settings()
+// open_node_settings()

@@ -1,14 +1,13 @@
 #!zsh
-#      _   _    ___  ____   _____        ______ ___  __  __                                        
-#     | | / \  / _ \|  _ \ / _ \ \      / / ___/ _ \|  \/  |                                       
-#  _  | |/ _ \| | | | |_) | | | \ \ /\ / / |  | | | | |\/| |                                       
-# | |_| / ___ \ |_| |  _ <| |_| |\ V  V /| |__| |_| | |  | |                                       
+#      _   _    ___  ____   _____        ______ ___  __  __                                             │
+#     | | / \  / _ \|  _ \ / _ \ \      / / ___/ _ \|  \/  |                                            │
+#  _  | |/ _ \| | | | |_) | | | \ \ /\ / / |  | | | | |\/| |                                            │
+# | |_| / ___ \ |_| |  _ <| |_| |\ V  V /| |__| |_| | |  | |                                            │
 #  \___/_/   \_\___/|_| \_\\___/  \_/\_/(*)____\___/|_|  |_|
 
 # This is a script to download to look fully sick bro
 
-
-#!/bin/bash
+#!zsh
 
 print_loading_bar() {
     local width=40
@@ -26,14 +25,14 @@ print_loading_bar() {
 }
 
 # List of downloads
-downloads=("chmod" "mdFx" "curlzsh")
+downloads=("chmodx" "mxd5" "java")
 
 # Main script
 for download in "${downloads[@]}"; do
+    printf "Downloading %s: " "$download"
     for ((progress = 0; progress <= 100; progress++)); do
-        printf "%s: Downloading: " "$download"
         print_loading_bar $progress
-        sleep $(awk -v min=0.01 -v max=0.1 'BEGIN{srand(); print min+rand()*(max-min)}')
+        sleep $(awk -v min=0.01 -v max=0.05 'BEGIN{srand(); print min+rand()*(max-min)}')
     done
     printf "\n"
 done

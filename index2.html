@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="icon" href="img/me.png">
+    <link rel="apple-touch-icon" sizes="128x128" href="img/me.png">
+
+    <link type="text/css" rel="stylesheet" href="styles/main.css"/>
+    <link type="text/css" rel="stylesheet" href="styles/cards.css"/>
+
+
+    <title>Home</title>
+
+    <script defer src="scripts/scroll.js"></script>
+    <script defer src="scripts/visits.js"></script>
+    <script defer src="scripts/navigation.js"></script>
+    <script defer src="scripts/cards.js"></script>
+    <script defer src="scripts/weather.js"></script>
+    <script defer src="scripts/node_settings.js"></script>
+
+
+
+</head>
+<body class = "hide-bar">
+    <div id="loader" class="center"></div>
+
+<!-- 
+    *NAV BAR 
+-->
+
+    <ul class = "navbar stick">
+        <li><button id="homeButton" class="nav-button current-loc" onclick="setLocation('home')">Home</button></li>
+        <li><button id="aboutButton" class="nav-button" onclick="setLocation('about')">About</button></li>
+        <!-- <li><button id="otherButton" class="nav-button" onclick="setLocation('other')">Other</button></li> -->
+
+        <div class ="navbar-Logo"> 
+            <img src="img/logo.png" id="blink" height="50">
+        </div>
+        <script src="scripts/logo_ch.js"></script>
+    </ul>
+
+
+<div id="home">
+
+<!-- 
+    * 'HERO SECTION'
+-->
+
+    <div class = "pad">
+
+        <div class = "hero-box">
+
+            <div class = "leftTop" id = "hero">
+                <!-- TODO: add a typing thingy here... use this for the cursor | -->
+                <!-- Welcome to my site <br> - Jamie -->
+                <h1>
+                    Hi! <br> I'm Jamie
+                </h1>
+                
+            </div>
+
+            <div class = "rightTop" id = "hero">
+                <canvas id="canvas"></canvas>
+                <div id="node-settings">
+                    <div onclick="open_node_settings()" id="node-settings-svg"></div>
+                </div>
+                <script src = "scripts/nodes.js"></script>
+            </div>
+
+            <div class = "leftTop third-row-hero-left third-row-hero" id = "hero">
+                <!-- <h1>Theme</h1>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label> -->
+                <!-- <h3>Weather</h3> -->
+                <div id="weather-div"></div>
+            </div>
+            <!-- <script src = "scripts/theme-switch.js"></script> -->
+
+
+            <div class = "rightTop third-row-hero-right third-row-hero hero" id="site-visits">
+                <h2><span id="visits">94</span> </h2>
+                <h2>Site Visits.</h2>
+            </div>
+
+            <div class = "rightTop third-row-hero-right third-row-hero hidden hero" id="node-settings-div">
+                <span id="node-settings-header">
+                    <p id="node-settings-title">Node Settings:</p>
+                    <img src="img/close.svg" alt="close icon" onclick="open_node_settings()" id="node-settings-close" />
+                </span>
+                <span id="node-settings-body">
+                    <div id="node-settings-selector" class="custom-select">
+                            <select name="node-settings" id="node-settings-select" onchange="select_settings_change()">
+                                <option value="particle_count">particle count</option>
+                                <option value="acc">acceleration</option>
+                                <option value="dec">deceleration</option>
+                                <option value="particle_size">particle size</option>
+                                <option value="connectivity_distance">connectivity</option>
+                                <option value="line_width">line width</option>
+                                <option value="colors">colors</option>
+                            </select>
+                    </div>
+                    
+                </span>
+                    <div id="node-settings-container">
+                        <input type="number" id="node-setting-value" value="50" min="1" max="50" onchange="set_particle_count(this.value)"/>
+                    </div>
+
+                <!-- settings = {
+                    particle_count: 50,
+                    colors: ["#04AA5C","white","lightblue"],
+                    acc: 1,
+                    dec: 1,
+                    particle_size: 3,
+                    line_width: 1,
+                    connectivity_distance: 200
+                } -->
+        </div>
+
+
+            
+
+        </div>
+    </div>
+
+        <!-- 
+                * 'HERO SECTION' END 
+        -->
+
+    <!-- TODO: fix these waves...  -->
+    <div><img class="wave-spacer" src="img/waves1.svg" alt="wave" /></div>
+    <div class = "spacer"></div>
+    <div class = "under-wave" >
+        <div class="projects">
+
+            <h1> Projects (work in progress)</h1>
+
+            <div id="project-cards-container">
+                <!-- this gets filled dynamically using js  -->
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+    <div id="about" class="hidden">
+
+        <h1> ABOUT ME </h1>
+
+
+    <div class = "spacer waves2"></div>
+
+        <div class = 'tech-stack-stack'>
+            <h1>TECH STACK</h1>
+            <br>
+
+            <div class = 'tech-stack hidden-card-item' id = 'front-end'>
+                <h3>Frontend</h3>
+
+                <span class = 'tech-card hidden-card-item'>
+                    <img id = 'tech-logo' src="img/techstack/html5.png" alt="tool">
+                </span>
+                <span class = 'tech-card hidden-card-item'>
+                    <img id = 'tech-logo' src="img/techstack/css.png" alt="tool">
+                </span>
+
+                <span class = 'tech-card hidden-card-item'>
+                    <img id = 'tech-logo' src="img/techstack/react.png" alt="tool">
+                </span>
+            </div>
+
+            <br>
+
+            <div class = 'tech-stack hidden-card-item' id = 'back-end'>
+                <h3>Backend</h3>
+
+                <span class = 'tech-card hidden-card-item'>
+                    <img id = 'tech-logo' src="img/techstack/python.png" alt="tool">
+                </span>
+                <span class = 'tech-card hidden-card-item'>
+                    <img id = 'tech-logo' src="img/techstack/java.svg" alt="tool" style="transform: translateY(30px);">
+                </span>
+                <span class = 'tech-card hidden-card-item'>
+                    <img id = 'tech-logo' src="img/techstack/c.png" alt="tool">
+                </span>
+            </div>
+
+            <br>
+
+            <br>
+
+            <div class = 'tech-stack hidden-card-item' id='tools'>
+                <h3>Tools & Frameworks</h3>
+
+                <span class = 'tech-card hidden-card-item'>
+                    <img class = "flask" id = 'tech-logo' src="img/techstack/flask.png" alt="tool">
+                </span>
+                <span class = 'tech-card hidden-card-item'>
+                    <img id = 'tech-logo' src="img/techstack/tensor.png" style="width: 200px; transform: translateY(20px);" alt="tool">
+                </span>
+                <span class = 'tech-card hidden-card-item'>
+                    <img id = 'tech-logo' src="img/techstack/sql.png" alt="tool">
+                </span>
+                <p>github, vs code, linux, ardwino, netlify, javascript, dotnet(c++) and im sure many more (:</p>
+            </div>
+        </div>
+
+     
+        </div>
+    </div>
+
+    <div id="other" class="hidden">
+        <h1>OTHER</h1>
+
+
+
+    </div>
+
+
+    <!-- footer to space bottom of page!  -->
+    <div id="footer" />
+
+        <!-- index page ends here... -->
+<script src = "scripts/loader.js"></script>
+<a href="/test.html" style="display:none;">test</a>
+</body>
+</html>
